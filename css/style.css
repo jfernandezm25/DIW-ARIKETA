@@ -1,0 +1,349 @@
+:root { /* Variables globales con paleta cinematográfica */
+  --amarillo: #d4af37; /* Dorado Hollywood */
+  --marron-oscuro: #1a1412; /* Negro espresso / Noir */
+  --marron-medio: #8c6d3f; /* Bronce cálido */
+  --marron-claro: #f7f4ee; /* Crema marfil */
+  --gris: #ded7cd;
+  --fondo: #121110; /* Fondo oscuro tipo sala de cine */
+  --texto: #2b2623; 
+  --radio: 8px;
+  --sombra: 0 12px 30px rgba(0, 0, 0, 0.25);
+  --font-size: 3rem; 
+  --font-xs: 0.8rem;
+  --font-sm: 0.85rem;
+  --font-base: 0.9375rem; /* 15px */
+  --font-md: 1rem;
+  --font-lg: 1.25rem; /* 20px */
+} 
+
+* { /* todos los elementos HTML */
+  box-sizing: border-box; /* Incluye el padding y border dentro del ancho y alto total */
+} 
+
+body { 
+  margin: 0; /* Elimina márgenes exteriores  */
+  font-family: 'Georgia', 'Times New Roman', serif; /* Fuentes tipo créditos / cine */
+  background-color: var(--fondo); /* para poner el fondo de todo */
+  color: var(--texto); 
+  line-height: 1.6; /* Espacio entre ellos para que se lea mejor */
+} 
+
+ul { /* Estilos generales para listas no ordenadas */
+  padding-left: 20px; /* Margen a la izquierda  */
+} 
+
+/* Estructura general: sidebar + contenido */
+.contenedor { 
+  display: grid;
+  grid-template-columns: min(300px, 30%) 1fr;
+  gap: 30px;
+  width: min(1000px, 95%);
+  margin: 30px auto; /* Agrupa los 4 márgenes (arriba/abajo 30px, lados automáticos) */
+  background-color: white;
+  border: 1px solid var(--marron-medio); /* Agrupa grosor, estilo y color del borde */
+  border-radius: var(--radio);
+  box-shadow: var(--sombra); /* Efecto cartel de cine con sombra profunda */
+}
+
+.cabecera, /* Selecciona los dos bllques */
+.perfil { 
+  background-image: linear-gradient(135deg, var(--marron-oscuro), var(--marron-medio)); /* Degradado elegante estilo cartelera */
+  color: var(--amarillo); 
+  padding-top: 20px; /* Relleno superior de 20px */
+  padding-right: 20px; /* Relleno derecho de 20px */
+  padding-bottom: 20px; /* Relleno inferior de 20px */
+  padding-left: 20px; /* Relleno izquierdo de 20px */
+} 
+
+.cabecera {
+  border-top-left-radius: var(--radio); 
+  border-top-right-radius: var(--radio);
+} 
+
+.cabecera h1 {
+  font-size: var(--font-size);
+  letter-spacing: 2px; /* Estilo marquesina de cine */
+  text-transform: uppercase;
+  text-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+} 
+
+.subtitulo {
+  font-size: var(--font-sm);
+  color: var(--amarillo);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+} 
+
+.rol {
+  color: var(--marron-claro);
+  margin-bottom: 15px;
+  font-weight: bold;
+} 
+
+.perfil {
+  border-bottom-left-radius: var(--radio);
+  border-bottom-right-radius: var(--radio);
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  margin-bottom: 25px;
+} 
+
+.perfil h3 {
+  color: var(--amarillo);
+  text-transform: uppercase;
+  font-size: var(--font-md);
+  letter-spacing: 1px;
+} 
+
+.perfil p {
+  color: var(--marron-claro);
+  max-width: 60ch; /* Limita la anchura a 60 caracteres */
+} 
+
+/* Columna principal */
+.principal {
+  padding-top: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-left: 0;
+} 
+
+.principal h2 {
+  border-bottom: 2px solid var(--amarillo);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  color: var(--marron-oscuro);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+} 
+
+.pendiente {
+  color: #856404;
+} 
+
+/* Colores para estados de Éxito / Completado (Verde) */
+.completado {
+  color: #155724;
+} 
+
+/* Experiencia */
+.trabajo {
+  display: grid;
+  grid-template-columns: calc(20% - 10px) 1fr;
+  gap: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--gris);
+} 
+
+.trabajo .fecha {
+  font-size: var(--font-sm);
+  color: var(--marron-medio);
+  font-weight: bold;
+} 
+
+.trabajo .lugar {
+  color: var(--marron-oscuro);
+  font-weight: bold;
+  font-size: var(--font-sm);
+  margin-bottom: 8px;
+} 
+
+.etiqueta-estado {
+  font-size: var(--font-xs);
+  padding-top: 2px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  border-radius: 20px;
+  margin-left: 8px;
+} 
+
+.verde {
+  background-color: #e3f3e9;
+  color: #2b7a4b;
+} 
+
+.azul {
+  background-color: var(--marron-claro);
+  color: var(--marron-oscuro);
+} 
+
+.amarillo {
+  background-color: #fdf1d6;
+  color: #b4790f;
+} 
+
+/* Tabla de desafíos */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--gris);
+  border-radius: 6px;
+  overflow: hidden; /* Mantiene bordes limpios sin sobresalir */
+} 
+
+th,
+td {
+  text-align: left;
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  font-size: var(--font-sm);
+} 
+
+th {
+  background-color: var(--marron-oscuro);
+  color: var(--amarillo);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+} 
+
+tr:not(:last-child) {
+  border-bottom: 1px solid var(--gris);
+} 
+
+/* Formación: tarjetas adaptables */
+.tarjetas {
+  display: grid;  
+  grid-template-columns: repeat(auto-fit, minmax(220px, 2fr)); /* Columnas adaptables según el espacio */
+  gap: 15px;
+} 
+
+.tarjeta {
+  background-color: var(--marron-claro);
+  border: 1px solid var(--gris);
+  border-left: 4px solid var(--amarillo); /* Detalle de tira fotográfica */
+  border-radius: 4px; /* Cuanto de bordeado */
+  padding: 15px; /* Separacion entre tarjetas  */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+} 
+
+.numero {
+  color: var(--marron-oscuro);
+  font-weight: bold;
+} 
+
+.dos-columnas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  margin-bottom: 25px;
+} 
+
+/* Columna izquierda */
+.lateral {
+  background-color: var(--marron-claro);
+  padding: 25px;
+}   
+
+.foto {
+  width: 150%;
+  max-width: 225px; /* Cuanto de grande es */
+  display: block; 
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  border-radius: 4px;
+  border: 3px solid var(--amarillo);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Efecto marco de fotografía dramático */
+} 
+
+.lateral h2 {
+  font-size: var(--font-lg);
+  color: var(--marron-oscuro);
+  border-bottom: 2px solid var(--amarillo); /* La barra que los separa */
+  padding-bottom: 5px; 
+  margin-top: 25px; /* El espacio entre los textos */
+  letter-spacing: 1px;
+} 
+
+.lista-datos {
+  list-style: none;
+  padding: 0;
+  font-size: var(--font-base);
+} 
+
+.lista-datos li {
+  margin-bottom: 8px;
+} 
+
+.lateral p {
+  font-size: var(--font-base);
+  margin-bottom: 4px;
+} 
+
+.barra {
+  height: 8px;
+  background-color: var(--amarillo);
+  border-radius: 20px;
+  margin-bottom: 12px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+} 
+
+.etiquetas {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+} 
+
+.etiquetas li {
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--gris);
+  color: var(--marron-oscuro);
+  font-size: var(--font-sm);
+  padding-top: 5px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  border-radius: 20px;
+} 
+
+.cita {
+  background-color: var(--marron-oscuro);
+  color: var(--amarillo);
+  font-size: var(--font-sm);
+  font-style: italic;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 25px;
+  border-left: 3px solid var(--amarillo);
+} 
+
+.cita p {
+  margin-top: 8px;
+  font-style: normal;
+  color: var(--marron-claro);
+  font-weight: bold;
+} 
+
+/* Pie de página */
+.pie {
+  text-align: center;
+  font-size: var(--font-base);
+  color: var(--marron-claro);
+  padding-top: 20px;
+  padding-bottom: 20px;
+} 
+
+/* Responsive */
+@media (max-width: 700px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+  } 
+
+  .principal {
+    padding: 25px;
+  } 
+
+  .trabajo,
+  .dos-columnas {
+    grid-template-columns: 1fr;
+  } 
+}
