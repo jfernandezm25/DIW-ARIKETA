@@ -1,10 +1,10 @@
 :root { /* Variables globales con paleta cinematográfica */
-  --amarillo: #d4af37; /* Dorado Hollywood */
-  --marron-oscuro: #1a1412; /* Negro espresso / Noir */
+  --amarillo: #d4af37; /* Dorado */
+  --marron-oscuro: #1a1412; /* Negro*/
   --marron-medio: #8c6d3f; /* Bronce cálido */
-  --marron-claro: #f7f4ee; /* Crema marfil */
+  --marron-claro: #f7f4ee; /* Crema  */
   --gris: #ded7cd;
-  --fondo: #121110; /* Fondo oscuro tipo sala de cine */
+  --fondo: #121110; /* Fondo oscuro*/
   --texto: #2b2623; 
   --radio: 8px;
   --sombra: 0 12px 30px rgba(0, 0, 0, 0.25);
